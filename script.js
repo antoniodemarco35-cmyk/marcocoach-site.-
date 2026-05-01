@@ -95,39 +95,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // 5. Form Handling (Netlify integration helper + success message)
+    // 5. Form Handling (Removed custom logic for Formspree direct submission)
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Manual validation check for required fields
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const name = document.getElementById('name').value;
-
-            if (!email || !phone || !name) {
-                alert('Compila tutti i campi obbligatori');
-                return;
-            }
-            
-            const formData = new FormData(contactForm);
-            
-            fetch('/', {
-                method: 'POST',
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formData).toString()
-            })
-            .then(() => {
-                formContainer.innerHTML = `
-                    <div class="form-success">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #52b788; margin-bottom: 20px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                        <h3>Grazie!</h3>
-                        <p>Il tuo messaggio è stato inviato correttamente. Ti contatterò entro 24 ore per confermare la tua call.</p>
-                    </div>
-                `;
-            })
-            .catch((error) => alert('Errore nell\'invio del form: ' + error));
-        });
+        // Formspree handles submission automatically with the action attribute
     }
 
     // 6. Cookie Banner Logic
