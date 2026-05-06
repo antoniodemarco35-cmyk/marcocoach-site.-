@@ -1113,51 +1113,60 @@ footer .copy { font-size: 13px; color: var(--text-secondary); }
 }
 
 .results-images {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-    .results-images {
-        grid-template-columns: 1fr 1fr;
-    }
+.result-image-card {
+    width: 100%;
+    max-width: 380px;
+    background: var(--bg-dark);
+    border-radius: 16px;
+    border: 1px solid var(--border-subtle);
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
+}
+
+.result-image-card:hover {
+    transform: translateY(-5px);
+}
+
+.image-label {
+    display: block;
+    padding: 12px;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-align: center;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.result-image-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    background: #000;
+}
+
+.image-stats {
+    display: block;
+    padding: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent-green-light);
+    text-align: center;
+    background: rgba(255,255,255,0.02);
 }
 
 @media (min-width: 1024px) {
     .results-images {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
+        margin-top: 0;
     }
-}
-
-.result-image-wrapper {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--border-subtle);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-
-.result-image-wrapper img {
-    width: 100%;
-    height: auto;
-    display: block;
-    aspect-ratio: 4/5;
-    object-fit: cover;
-}
-
-.image-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(transparent, rgba(0,0,0,0.9));
-    padding: 12px;
-    font-size: 12px;
-    font-weight: 700;
-    color: white;
 }
 
 #metodo { padding-bottom: 16px; }
