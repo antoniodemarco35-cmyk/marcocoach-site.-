@@ -999,35 +999,30 @@ footer .copy { font-size: 13px; color: var(--text-secondary); }
     background: var(--bg-dark);
 }
 
-.results-card {
+.results-card-vertical {
     background: var(--surface-primary);
     border: 1px solid var(--border-subtle);
     border-radius: 24px;
     padding: 32px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.results-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
+.results-main-content {
+    text-align: center;
+    margin-bottom: 48px;
 }
 
-@media (min-width: 1024px) {
-    .results-grid {
-        grid-template-columns: 1.2fr 0.8fr;
-        align-items: start;
-    }
-}
-
-.results-content h3 {
+.results-main-content h3 {
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     color: var(--text-primary);
 }
 
-.results-content p {
+.results-main-content p {
     color: var(--text-secondary);
-    margin-bottom: 24px;
+    max-width: 600px;
+    margin: 0 auto 32px;
 }
 
 .race-data-grid {
@@ -1035,6 +1030,7 @@ footer .copy { font-size: 13px; color: var(--text-secondary); }
     grid-template-columns: 1fr;
     gap: 16px;
     margin-bottom: 32px;
+    text-align: left;
 }
 
 @media (min-width: 480px) {
@@ -1053,38 +1049,14 @@ footer .copy { font-size: 13px; color: var(--text-secondary); }
 .roma-box { border-left: 3px solid var(--text-secondary); }
 .lucca-box { border-left: 3px solid var(--accent-green-light); }
 
-.race-box h4 {
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 12px;
-    color: var(--text-primary);
-}
-
-.race-box ul {
-    list-style: none;
-}
-
-.race-box li {
-    font-size: 13px;
-    color: var(--text-secondary);
-    margin-bottom: 4px;
-}
-
-.race-box li strong {
-    color: var(--text-primary);
-    font-weight: 600;
-}
-
 .results-highlights {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
-    margin-bottom: 32px;
+    margin-bottom: 40px;
     padding: 20px;
     background: rgba(82, 183, 136, 0.05);
     border-radius: 12px;
-    text-align: center;
 }
 
 .hl-value {
@@ -1097,12 +1069,11 @@ footer .copy { font-size: 13px; color: var(--text-secondary); }
 .hl-label {
     font-size: 10px;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
     color: var(--text-secondary);
 }
 
 .results-cta {
-    padding-top: 24px;
+    padding: 24px 0;
     border-top: 1px solid var(--border-subtle);
 }
 
@@ -1112,37 +1083,21 @@ footer .copy { font-size: 13px; color: var(--text-secondary); }
     color: var(--text-primary);
 }
 
-.results-images {
+.results-images-stack {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 40px;
     align-items: center;
 }
 
 .result-image-card {
     width: 100%;
-    max-width: 380px;
+    max-width: 420px;
     background: var(--bg-dark);
     border-radius: 16px;
     border: 1px solid var(--border-subtle);
     overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-    transition: transform 0.3s ease;
-}
-
-.result-image-card:hover {
-    transform: translateY(-5px);
-}
-
-.image-label {
-    display: block;
-    padding: 12px;
-    font-size: 11px;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: var(--text-secondary);
-    text-align: center;
-    border-bottom: 1px solid var(--border-subtle);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 .result-image-card img {
@@ -1150,23 +1105,17 @@ footer .copy { font-size: 13px; color: var(--text-secondary); }
     height: auto;
     display: block;
     object-fit: contain;
-    background: #000;
 }
 
-.image-stats {
+.image-label {
     display: block;
-    padding: 12px;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--accent-green-light);
+    padding: 10px;    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--text-secondary);
     text-align: center;
     background: rgba(255,255,255,0.02);
-}
-
-@media (min-width: 1024px) {
-    .results-images {
-        margin-top: 0;
-    }
+    border-bottom: 1px solid var(--border-subtle);
 }
 
 #metodo { padding-bottom: 16px; }
